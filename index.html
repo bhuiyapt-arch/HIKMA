@@ -1,1098 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Al-Hikmah Online Quran Academy | Learn Quran with Tajweed">
-    <meta property="og:description" content="1-on-1 Live Online Quran Classes for Kids & Adults. Book your FREE Trial Class today!">
-    <title>Al-Hikmah Online Quran Academy | Learn Quran with Tajweed</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary: #063b27;
-            --secondary: #0b5e3f;
-            --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --bg-light: #f8faf9;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Top Announcement Bar */
-        .top-bar {
-            background-color: var(--gold);
-            color: var(--primary);
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Navbar */
-        nav {
-            background-color: var(--primary);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .logo {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.35rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-btn {
-            background-color: var(--gold);
-            color: var(--primary);
-            padding: 8px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        .nav-btn:hover {
-            background-color: var(--white);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(6, 59, 39, 0.96), rgba(11, 94, 63, 0.92)), 
-                        url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1600&q=80') center/cover;
-            color: var(--white);
-            padding: 75px 5%;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 45px;
-            align-items: center;
-        }
-
-        .hero-text {
-            text-align: left;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.2);
-            border: 1px solid var(--gold);
-            color: var(--gold-light);
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.82rem;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            line-height: 1.25;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-            color: #e2e8f0;
-            font-weight: 300;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: flex-start;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        /* Hero Image Box */
-        .hero-image-wrapper {
-            position: relative;
-        }
-
-        .hero-image-card {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 4px solid var(--gold);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-            background: var(--primary);
-        }
-
-        .hero-image-card img {
-            width: 100%;
-            height: 390px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .hero-image-card:hover img {
-            transform: scale(1.03);
-        }
-
-        .live-class-badge {
-            position: absolute;
-            bottom: 18px;
-            left: 18px;
-            right: 18px;
-            background: rgba(6, 59, 39, 0.92);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(212, 175, 55, 0.5);
-            padding: 12px 16px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--white);
-        }
-
-        .live-dot {
-            width: 12px;
-            height: 12px;
-            background-color: #25D366;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #25D366;
-            flex-shrink: 0;
-        }
-
-        .live-class-badge div {
-            font-size: 0.85rem;
-            line-height: 1.3;
-        }
-
-        .live-class-badge strong {
-            color: var(--gold);
-            display: block;
-            font-size: 0.92rem;
-        }
-
-        .btn-primary {
-            background-color: var(--gold);
-            color: var(--primary);
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--white);
-            color: var(--white);
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        /* Section Common */
-        .section {
-            padding: 70px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-header span {
-            color: var(--secondary);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-        }
-
-        .section-header h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.1rem;
-            color: var(--primary);
-            margin-top: 5px;
-        }
-
-        /* Features */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-box {
-            background: var(--white);
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-bottom: 4px solid var(--gold);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(6, 59, 39, 0.08);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin: 0 auto 15px;
-        }
-
-        .feature-box h3 {
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-            color: var(--primary);
-        }
-
-        .feature-box p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* Courses */
-        .courses-bg {
-            background-color: #eef4f1;
-            padding: 70px 5%;
-        }
-
-        .courses-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .course-card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .course-top {
-            background: var(--primary);
-            color: var(--white);
-            padding: 25px;
-        }
-
-        .course-tag {
-            background: var(--gold);
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .course-body {
-            padding: 25px;
-        }
-
-        .course-body ul {
-            list-style: none;
-        }
-
-        .course-body ul li {
-            margin-bottom: 10px;
-            font-size: 0.92rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .course-body ul li i {
-            color: var(--secondary);
-        }
-
-        .course-btn {
-            display: block;
-            text-align: center;
-            background: var(--primary);
-            color: var(--white);
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .course-btn:hover {
-            background: var(--gold);
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* Plans */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .price-card {
-            background: var(--white);
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 35px 25px;
-            text-align: center;
-        }
-
-        .price-card.popular {
-            border: 2px solid var(--gold);
-            box-shadow: 0 15px 35px rgba(6, 59, 39, 0.12);
-            position: relative;
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold);
-            color: var(--primary);
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .price-amount {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin: 15px 0;
-        }
-
-        .price-amount span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .price-details {
-            list-style: none;
-            margin: 20px 0 25px;
-            color: var(--text-muted);
-            font-size: 0.92rem;
-        }
-
-        .price-details li {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 8px;
-        }
-
-        /* REGISTRATION & WHATSAPP BOOKING FORM */
-        .contact-section {
-            background-color: #eef4f1;
-            padding: 70px 5%;
-        }
-
-        .contact-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-        }
-
-        .contact-info {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .contact-info h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.7rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-info p {
-            color: #e2e8f0;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 18px;
-            font-size: 0.95rem;
-        }
-
-        .info-item i {
-            width: 40px;
-            height: 40px;
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-
-        .contact-form {
-            padding: 40px 35px;
-        }
-
-        .contact-form h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(11, 94, 63, 0.1);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            background-color: #1ebe5d;
-            transform: translateY(-2px);
-        }
-
-        /* Confirmation Modal Popup */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(6, 59, 39, 0.85);
-            backdrop-filter: blur(5px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 20px;
-        }
-
-        .modal-box {
-            background: var(--white);
-            max-width: 450px;
-            width: 100%;
-            border-radius: 20px;
-            padding: 35px 25px;
-            text-align: center;
-            border-top: 6px solid var(--gold);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            animation: popIn 0.3s ease;
-        }
-
-        @keyframes popIn {
-            from { transform: scale(0.85); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .modal-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(37, 211, 102, 0.15);
-            color: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            margin: 0 auto 15px;
-        }
-
-        .modal-box h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .modal-box p {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-        }
-
-        .modal-summary {
-            background: #f1f5f9;
-            padding: 12px 15px;
-            border-radius: 10px;
-            text-align: left;
-            font-size: 0.85rem;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            border-left: 4px solid var(--secondary);
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .modal-wa-btn {
-            background: #25D366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .modal-close-btn {
-            background: #e2e8f0;
-            color: var(--text-dark);
-            border: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-
-        /* Floating WhatsApp */
-        .float-wa {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-            z-index: 1000;
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: #042619;
-            color: #94a3b8;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-        }
-
-        footer strong {
-            color: var(--gold);
-        }
-
-        @media (max-width: 900px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-text {
-                text-align: center;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-image-card img {
-                height: 320px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .contact-container { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-            .contact-form { padding: 30px 20px; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Al-Hikmah Online Quran Academy | Live 1-on-1 Quran Classes in Australia</title>
+<meta name="description" content="Live one-on-one Quran, Tajweed and Hifz classes for kids and adults across Australia. Book 2 free trial classes.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f6f8f6;--surface:#fff;--ink:#14211c;--muted:#566961;--green:#063b27;--green2:#0b5e3f;--gold:#b8892b;--gold-l:#e8c36f;--line:#d6e0da;--head:#063b27;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1511;--surface:#12231c;--ink:#e9f1ed;--muted:#9db3aa;--line:#264238;--head:#e8c36f;--gold:#e0b25a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1511;--surface:#12231c;--ink:#e9f1ed;--muted:#9db3aa;--line:#264238;--head:#e8c36f;--gold:#e0b25a;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.15;color:var(--head)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.bar{background:var(--gold-l);color:#063b27;text-align:center;font:600 14px/1.4 Manrope;padding:9px 16px}
+nav{position:sticky;top:0;z-index:50;background:var(--green);padding:12px 0}
+nav .w{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font:700 22px "Cormorant Garamond",serif;color:var(--gold-l);text-decoration:none}
+.links{display:flex;gap:22px;align-items:center}
+.links a{color:#dbe8e2;text-decoration:none;font-size:15px;font-weight:500}
+.btn{display:inline-block;border:0;border-radius:12px;padding:14px 26px;font:700 16px Manrope,sans-serif;text-decoration:none;cursor:pointer;background:var(--gold-l);color:#063b27;text-align:center}
+.btn.alt{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn.sm{padding:9px 18px;font-size:14px}
+.btn.dk{background:var(--green);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.dk{background:var(--gold-l);color:#063b27}}
+@media(max-width:720px){.links a:not(.btn){display:none}}
+.hero{background:radial-gradient(900px 400px at 85% -10%,#12805a55,transparent),var(--green);color:#eef5f1;padding:64px 0 60px;position:relative;overflow:hidden}
+.hero .ar{font-family:Amiri,serif;position:absolute;right:-10px;top:-30px;font-size:clamp(190px,40vw,380px);line-height:1;color:#e8c36f;opacity:.12;pointer-events:none}
+.hero h1{color:#fff;font-size:clamp(40px,8vw,70px);font-weight:700;max-width:760px;position:relative}
+.hero p.lead{font-size:clamp(17px,3.4vw,20px);max-width:600px;margin:18px 0 28px;color:#cfe0d8;position:relative}
+.cta{display:flex;gap:12px;flex-wrap:wrap;position:relative}
+.facts{display:flex;gap:10px 28px;flex-wrap:wrap;margin-top:34px;color:#cfe0d8;font-size:15px;position:relative}
+.facts b{color:var(--gold-l)}
+section{padding:68px 0 0}
+.hd{max-width:640px;margin-bottom:30px}
+.hd h2{font-size:clamp(32px,6vw,46px)}
+.hd p{color:var(--muted);margin-top:8px}
+.g{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{font-size:26px;margin-bottom:6px}
+.card p,.card li{color:var(--muted);font-size:16px}
+.card ul{padding-left:18px;margin-top:10px}
+.course{border-top:4px solid var(--gold)}
+.course .for{font-weight:700;color:var(--ink);font-size:14px;margin-bottom:6px}
+.steps{counter-reset:s;display:grid;gap:14px}
+.steps li{list-style:none;display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.steps li:before{counter-increment:s;content:counter(s);flex:none;width:36px;height:36px;border-radius:50%;background:var(--green);color:var(--gold-l);display:grid;place-items:center;font:700 17px Manrope}
+.steps b{display:block;color:var(--ink)}
+.steps span{color:var(--muted);font-size:16px}
+.plan{display:flex;flex-direction:column;gap:6px;position:relative}
+.plan .pr{font:700 48px/1 "Cormorant Garamond",serif;color:var(--head)}
+.plan .pr small{font:500 16px Manrope;color:var(--muted)}
+.plan.rec{border:2px solid var(--gold);box-shadow:0 18px 40px #b8892b22}
+.tag{position:absolute;top:-13px;left:22px;background:var(--gold);color:#fff;font:700 13px Manrope;padding:4px 14px;border-radius:99px}
+.plan .btn{margin-top:auto}
+.note{color:var(--muted);font-size:14px;margin-top:14px}
+.pay{background:var(--green);color:#eef5f1;border-radius:22px;padding:32px 22px}
+.pay h2{color:#fff;font-size:clamp(30px,6vw,42px)}
+.pay>p{color:#cfe0d8;margin:6px 0 22px;max-width:560px}
+.pay label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+.pm{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:20px}
+.pm button{background:#ffffff14;border:1px solid #ffffff30;color:#fff;border-radius:14px;padding:16px;text-align:left;font:600 16px Manrope;cursor:pointer}
+.pm button small{display:block;font-weight:400;color:#cfe0d8;font-size:14px;margin-top:2px}
+.pm button:hover{background:#ffffff26}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+details+details{margin-top:12px}
+summary{font-weight:700;cursor:pointer;color:var(--ink)}
+details p{color:var(--muted);margin-top:8px;font-size:16px}
+form{display:grid;gap:14px}
+.row{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+label.f{font-weight:600;font-size:15px;display:block;margin-bottom:5px}
+input,select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:16px}
+.pay select{background:#fff;color:#14211c}
+.reg{display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:860px){.reg{grid-template-columns:1fr 1.2fr}}
+.reg .info{background:var(--green);color:#eef5f1;border-radius:22px;padding:30px 26px}
+.reg .info h2{color:#fff;font-size:34px}
+.reg .info p{color:#cfe0d8;margin:10px 0}
+.reg .info b{color:var(--gold-l)}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#fff;font:700 15px Manrope;text-decoration:none;padding:13px 18px;border-radius:99px;box-shadow:0 8px 24px #0004;z-index:60}
+footer{margin-top:70px;background:var(--green);color:#cfe0d8;padding:34px 0 90px;text-align:center;font-size:15px}
+footer b{color:var(--gold-l)}
+</style>
 </head>
 <body>
+<div class="bar">Book 2 free trial classes. No payment needed to start.</div>
+<nav><div class="w"><a class="logo" href="#top">Al-Hikmah Quran Academy</a>
+<div class="links"><a href="#courses">Courses</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a class="btn sm" href="#register">Free trial</a></div></div></nav>
 
-    <div class="top-bar">
-        🌙 Special Offer: Book Your 2 FREE Trial Classes Today! Limited Seats Available.
-    </div>
+<header class="hero" id="top"><span class="ar" lang="ar" aria-hidden="true">اقرأ</span><div class="w">
+<h1>Learn the Quran with a personal teacher, live from home.</h1>
+<p class="lead">One-on-one online classes in Noorani Qaida, Tajweed and Hifz for children and adults across Australia. Classes run at times that suit your family.</p>
+<div class="cta"><a class="btn" href="#register">Book 2 free trial classes</a><a class="btn alt" href="#pricing">See pricing</a></div>
+<div class="facts"><span><b>1-on-1</b> live lessons</span><span><b>Male and female</b> tutors available</span><span><b>AEST, AEDT and AWST</b> friendly times</span></div>
+</div></header>
 
-    <nav>
-        <a href="#" class="logo"><i class="fa-solid fa-mosque"></i> AL-HIKMAH ACADEMY</a>
-        <a href="#register" class="nav-btn">Free Trial</a>
-    </nav>
+<main class="w">
+<section id="courses"><div class="hd"><h2>Choose where to begin</h2><p>Every student is assessed in the free trial and placed at the right level.</p></div>
+<div class="g g3">
+<div class="card course"><p class="for">Beginners and young children</p><h3>Noorani Qaida</h3><p>Arabic letters, sounds and joining rules, taught slowly until reading feels natural.</p><ul><li>Correct letter pronunciation</li><li>Reading short words with confidence</li><li>Weekly progress check</li></ul></div>
+<div class="card course"><p class="for">Anyone who can read Arabic letters</p><h3>Quran with Tajweed</h3><p>Read the Quran beautifully and correctly, with the rules of Tajweed applied from day one.</p><ul><li>Makharij and Sifaat</li><li>Fluency and rhythm</li><li>Live correction every lesson</li></ul></div>
+<div class="card course"><p class="for">Kids and new Muslims</p><h3>Hifz, Salah and Duas</h3><p>Memorise short surahs and learn how to pray with understanding.</p><ul><li>Juz Amma memorisation</li><li>Five daily prayers step by step</li><li>Essential duas and manners</li></ul></div>
+</div></section>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-text">
-                <div class="hero-badge">Online Quran Learning Center</div>
-                <h1>Learn to Read the <span>Holy Quran</span> with Proper Tajweed</h1>
-                <p>Interactive 1-on-1 live online classes for Kids & Adults from the comfort of your home. Certified Male & Female teachers available 24/7.</p>
-                <div class="hero-buttons">
-                    <a href="#register" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Free Trial Class</a>
-                    <a href="#courses" class="btn-outline">Explore Courses</a>
-                </div>
-            </div>
+<section><div class="hd"><h2>How it works</h2></div>
+<ol class="steps">
+<li><div><b>Book a free trial</b><span>Fill in the form below. It opens WhatsApp with your details ready to send.</span></div></li>
+<li><div><b>Meet your tutor</b><span>Two free classes on Zoom, Google Meet or Skype to check the fit.</span></div></li>
+<li><div><b>Pick a plan and pay monthly</b><span>Pay by card, PayPal or bank transfer. Cancel any time.</span></div></li>
+<li><div><b>Learn every week</b><span>Same tutor, fixed times, and a progress update each month.</span></div></li>
+</ol></section>
 
-            <!-- Teacher Teaching Student Image -->
-            <div class="hero-image-wrapper">
-                <div class="hero-image-card">
-                    <img src="https://images.pexels.com/photos/8164742/pexels-photo-8164742.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Quran Teacher Teaching Student">
-                    <div class="live-class-badge">
-                        <span class="live-dot"></span>
-                        <div>
-                            <strong>1-on-1 Personal Guidance</strong>
-                            Dedicated Quran Tutor & Student Interaction
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="pricing"><div class="hd"><h2>Simple monthly pricing</h2><p>All prices are in Australian dollars. Each class is 30 minutes, one-on-one.</p></div>
+<div class="g g3">
+<div class="card plan"><h3>Weekend</h3><div class="pr">$69<small> AUD / month</small></div><p>2 classes a week, 8 per month. Saturday and Sunday.</p><ul><li>Dedicated tutor</li><li>Monthly progress report</li></ul><a class="btn dk" href="#register">Start free trial</a></div>
+<div class="card plan rec"><span class="tag">Most popular</span><h3>Standard</h3><div class="pr">$99<small> AUD / month</small></div><p>3 classes a week, 12 per month. You choose the days.</p><ul><li>Dedicated tutor</li><li>Monthly progress report</li><li>Free make-up class</li></ul><a class="btn dk" href="#register">Start free trial</a></div>
+<div class="card plan"><h3>Intensive</h3><div class="pr">$149<small> AUD / month</small></div><p>5 classes a week, 20 per month. Monday to Friday.</p><ul><li>Fast-track Tajweed or Hifz</li><li>Weekly progress notes</li></ul><a class="btn dk" href="#register">Start free trial</a></div>
+</div><p class="note">Sample prices. Replace with your own before launch.</p></section>
 
-    <section class="section">
-        <div class="section-header">
-            <span>Why Choose Us</span>
-            <h2>Excellence in Islamic Education</h2>
-        </div>
-        <div class="features-grid">
-            <div class="feature-box">
-                <div class="feature-icon"><i class="fa-solid fa-user-graduate"></i></div>
-                <h3>1-on-1 Live Classes</h3>
-                <p>Dedicated personal attention for every student to ensure fast and accurate learning.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
-                <h3>Certified Tutors</h3>
-                <p>Experienced, patient, and qualified male & female teachers fluent in English & Arabic.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
-                <h3>Flexible Timings</h3>
-                <p>Choose class schedules that fit your daily routine, available across all time zones.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Kid-Friendly Environment</h3>
-                <p>Engaging and supportive teaching methods designed specifically for young learners.</p>
-            </div>
-        </div>
-    </section>
+<section id="pay"><div class="pay"><h2>Pay securely</h2><p>After your free trial, pay for the month in one tap. Choose your plan, then your payment method.</p>
+<label for="pp">Your plan</label>
+<select id="pp"><option>Weekend ($69 AUD)</option><option selected>Standard ($99 AUD)</option><option>Intensive ($149 AUD)</option></select>
+<div class="pm">
+<button type="button" onclick="pay('card')">Card or Apple Pay<small>Visa, Mastercard, Amex</small></button>
+<button type="button" onclick="pay('paypal')">PayPal<small>Pay with your PayPal balance or card</small></button>
+<button type="button" onclick="pay('bank')">Bank transfer or PayID<small>Details sent on WhatsApp</small></button>
+</div></div></section>
 
-    <section class="courses-bg" id="courses">
-        <div class="section-header">
-            <span>Our Programs</span>
-            <h2>Structured Quran Courses</h2>
-        </div>
-        <div class="courses-grid">
-            <div class="course-card">
-                <div>
-                    <div class="course-top">
-                        <span class="course-tag">Beginner Level</span>
-                        <h3>Noorani Qaida Foundation</h3>
-                    </div>
-                    <div class="course-body">
-                        <ul>
-                            <li><i class="fa-solid fa-circle-check"></i> Arabic Alphabet & Pronunciation</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Proper Makharij (Articulation Points)</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Joining Letters & Harakat</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Ideal for Kids & Absolute Beginners</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="padding: 0 25px 25px;">
-                    <a href="#register" onclick="selectCourse('Noorani Qaida Foundation')" class="course-btn">Select Course</a>
-                </div>
-            </div>
+<section id="faq"><div class="hd"><h2>Questions parents ask</h2></div>
+<details><summary>Is the trial really free?</summary><p>Yes. You get two free classes with no card details and no commitment.</p></details>
+<details><summary>What time are classes?</summary><p>We schedule around school and work in your Australian time zone. Tell us your state and a preferred time in the form.</p></details>
+<details><summary>Can my daughter learn with a female tutor?</summary><p>Yes. Choose the tutor preference in the form and we will match you.</p></details>
+<details><summary>What do we need?</summary><p>A phone, tablet or computer with internet and a quiet space. Classes run on Zoom, Google Meet or Skype.</p></details>
+</section>
 
-            <div class="course-card">
-                <div>
-                    <div class="course-top">
-                        <span class="course-tag">Most Popular</span>
-                        <h3>Quran Reading with Tajweed</h3>
-                    </div>
-                    <div class="course-body">
-                        <ul>
-                            <li><i class="fa-solid fa-circle-check"></i> Complete Quran Recitation (Nazra)</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Practical Application of Tajweed Rules</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Fluency & Melodious Recitation</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Weekly Progress Assessment</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="padding: 0 25px 25px;">
-                    <a href="#register" onclick="selectCourse('Quran Reading with Tajweed')" class="course-btn">Select Course</a>
-                </div>
-            </div>
+<section id="register"><div class="reg">
+<div class="info"><h2>Book your free trial</h2><p>Send your details and we will reply on WhatsApp with available times.</p><p><b>WhatsApp</b><br>+61 432 772 444</p><p><b>Platform</b><br>Zoom, Google Meet or Skype</p><p><b>Availability</b><br>All Australian states and time zones</p></div>
+<div class="card"><form id="f">
+<div><label class="f" for="n">Student or parent name</label><input id="n" required autocomplete="name"></div>
+<div class="row"><div><label class="f" for="a">Student age</label><input id="a" type="number" min="3" max="99" required></div>
+<div><label class="f" for="g">Tutor preference</label><select id="g"><option>Male student, male tutor</option><option>Female student, female tutor</option><option>Child, any tutor</option></select></div></div>
+<div class="row"><div><label class="f" for="c">Course</label><select id="c"><option>Noorani Qaida</option><option>Quran with Tajweed</option><option>Hifz, Salah and Duas</option></select></div>
+<div><label class="f" for="p">Plan</label><select id="p"><option>Standard, 3 days a week</option><option>Weekend, 2 days a week</option><option>Intensive, 5 days a week</option></select></div></div>
+<div><label class="f" for="t">State and preferred class time</label><input id="t" placeholder="For example: Victoria, weekdays after 5 pm"></div>
+<button class="btn dk" type="submit">Send on WhatsApp</button></form></div>
+</div></section>
+</main>
 
-            <div class="course-card">
-                <div>
-                    <div class="course-top">
-                        <span class="course-tag">Essential Islam</span>
-                        <h3>Hifz & Daily Salah / Duas</h3>
-                    </div>
-                    <div class="course-body">
-                        <ul>
-                            <li><i class="fa-solid fa-circle-check"></i> Memorization of Short Surahs (Juz Amma)</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Complete 5 Times Salah Training</li>
-                            <li><i class="fa-solid fa-circle-check"></i> 40 Essential Masnoon Duas</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Basic Islamic Manners & Akhlaq</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="padding: 0 25px 25px;">
-                    <a href="#register" onclick="selectCourse('Hifz & Daily Salah / Duas')" class="course-btn">Select Course</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<a class="wa" href="https://wa.me/61432772444?text=Assalamu%20Alaikum!%20I%20would%20like%20to%20know%20more%20about%20Quran%20classes." target="_blank" rel="noopener">WhatsApp us</a>
+<footer><div class="w"><p><b>Al-Hikmah Online Quran Academy</b> © 2026. All rights reserved.</p><p>WhatsApp +61 432 772 444 · Serving families across Australia</p></div></footer>
 
-    <!-- PRICING PLANS IN AUSTRALIAN DOLLARS (AUD $) -->
-    <section class="section">
-        <div class="section-header">
-            <span>Class Schedules</span>
-            <h2>Flexible Monthly Plans (AUD)</h2>
-        </div>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <h3>Weekend Plan</h3>
-                <div class="price-amount">AUD $45 <span>/ month</span></div>
-                <ul class="price-details">
-                    <li>2 Days per Week (8 Classes)</li>
-                    <li>30 Minutes 1-on-1 Session</li>
-                    <li>Saturday & Sunday</li>
-                    <li>Monthly Progress Report</li>
-                </ul>
-                <a href="#register" onclick="selectPlan('Weekend Plan (AUD $45/month)')" class="course-btn">Choose Plan</a>
-            </div>
-
-            <div class="price-card popular">
-                <div class="popular-badge">Recommended</div>
-                <h3>Standard Plan</h3>
-                <div class="price-amount">AUD $65 <span>/ month</span></div>
-                <ul class="price-details">
-                    <li>3 Days per Week (12 Classes)</li>
-                    <li>30 Minutes 1-on-1 Session</li>
-                    <li>Flexible Days Selection</li>
-                    <li>Dedicated Personal Tutor</li>
-                </ul>
-                <a href="#register" onclick="selectPlan('Standard Plan (AUD $65/month)')" class="course-btn">Choose Plan</a>
-            </div>
-
-            <div class="price-card">
-                <h3>Intensive Plan</h3>
-                <div class="price-amount">AUD $95 <span>/ month</span></div>
-                <ul class="price-details">
-                    <li>5 Days per Week (20 Classes)</li>
-                    <li>30 Minutes 1-on-1 Session</li>
-                    <li>Monday to Friday</li>
-                    <li>Fast-Track Tajweed & Hifz</li>
-                </ul>
-                <a href="#register" onclick="selectPlan('Intensive Plan (AUD $95/month)')" class="course-btn">Choose Plan</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- REGISTRATION & WHATSAPP BOOKING FORM -->
-    <section class="contact-section" id="register">
-        <div class="section-header">
-            <span>Admission & Inquiry</span>
-            <h2>Book Your Free Trial Class</h2>
-        </div>
-
-        <div class="contact-container">
-            <div class="contact-info">
-                <div>
-                    <h3>Start Your Quran Journey Today</h3>
-                    <p>Fill out this form to book your 2 FREE trial classes. Clicking submit will instantly open WhatsApp with your details.</p>
-                    
-                    <div class="info-item">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <div>
-                            <strong>WhatsApp Direct</strong><br>
-                            +61 432 772 444
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-video"></i>
-                        <div>
-                            <strong>Class Platform</strong><br>
-                            Zoom / Skype / Google Meet
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-globe"></i>
-                        <div>
-                            <strong>Availability</strong><br>
-                            Worldwide (All Time Zones)
-                        </div>
-                    </div>
-                </div>
-                <div style="font-size: 0.85rem; color: var(--gold-light); margin-top: 20px;">
-                    * 100% Free Trial. No advance payment required.
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <h3>Student Registration Form</h3>
-                <form id="quranForm" onsubmit="sendToWhatsApp(event)">
-                    <div class="form-group">
-                        <label>Student or Parent Name *</label>
-                        <input type="text" id="studentName" placeholder="Enter full name" required>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Student Age *</label>
-                            <input type="number" id="studentAge" placeholder="e.g. 8 or 25" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Gender / Preferred Tutor *</label>
-                            <select id="gender" required>
-                                <option value="Male Student (Male Tutor)">Male Student (Male Tutor)</option>
-                                <option value="Female Student (Female Tutor)">Female Student (Female Tutor)</option>
-                                <option value="Child (Any Tutor)">Child (Any Tutor)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Select Course *</label>
-                            <select id="course" required>
-                                <option value="Noorani Qaida Foundation">Noorani Qaida Foundation</option>
-                                <option value="Quran Reading with Tajweed">Quran Reading with Tajweed</option>
-                                <option value="Hifz & Daily Salah / Duas">Hifz & Daily Salah / Duas</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Weekly Plan *</label>
-                            <select id="plan" required>
-                                <option value="Standard Plan (AUD $65/month)">Standard (3 Days - AUD $65/mo)</option>
-                                <option value="Weekend Plan (AUD $45/month)">Weekend (2 Days - AUD $45/mo)</option>
-                                <option value="Intensive Plan (AUD $95/month)">Intensive (5 Days - AUD $95/mo)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Country & Preferred Class Time</label>
-                        <input type="text" id="countryTime" placeholder="e.g. Australia, Evening 6 PM">
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <i class="fa-brands fa-whatsapp"></i> Submit & Book on WhatsApp
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- INSTANT CONFIRMATION POPUP MODAL -->
-    <div class="modal-overlay" id="confirmationModal">
-        <div class="modal-box">
-            <div class="modal-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <h3>JazakAllah Khair!</h3>
-            <p>Your Free Trial request is ready. Redirecting you to WhatsApp to confirm your schedule with our team...</p>
-            <div class="modal-summary" id="modalSummary"></div>
-            <div class="modal-actions">
-                <a href="#" id="manualWaLink" target="_blank" class="modal-wa-btn">
-                    <i class="fa-brands fa-whatsapp"></i> Open WhatsApp
-                </a>
-                <button onclick="closeModal()" class="modal-close-btn">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/61432772444?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20more%20about%20Quran%20classes." class="float-wa" target="_blank" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <footer>
-        <p><strong>Al-Hikmah Online Quran Academy</strong> &copy; 2026. All Rights Reserved.</p>
-        <p style="margin-top: 5px; font-size: 0.85rem;">WhatsApp: +61 432 772 444 | Spreading the Light of the Holy Quran Worldwide</p>
-    </footer>
-
-    <!-- WhatsApp Direct, Auto-Select & Confirmation Popup Script -->
-    <script>
-        function selectCourse(courseName) {
-            document.getElementById('course').value = courseName;
-        }
-
-        function selectPlan(planName) {
-            document.getElementById('plan').value = planName;
-        }
-
-        function closeModal() {
-            document.getElementById('confirmationModal').style.display = 'none';
-        }
-
-        function sendToWhatsApp(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('studentName').value;
-            const age = document.getElementById('studentAge').value;
-            const gender = document.getElementById('gender').value;
-            const course = document.getElementById('course').value;
-            const plan = document.getElementById('plan').value;
-            const countryTime = document.getElementById('countryTime').value || 'Not specified';
-
-            const phoneNumber = "61432772444";
-
-            const message = `*Assalamu Alaikum! New Free Trial Booking:*%0A%0A` +
-                            `👤 *Name:* ${encodeURIComponent(name)}%0A` +
-                            `🎂 *Age:* ${encodeURIComponent(age)}%0A` +
-                            `👨‍🏫 *Preference:* ${encodeURIComponent(gender)}%0A` +
-                            `📖 *Course:* ${encodeURIComponent(course)}%0A` +
-                            `📅 *Plan:* ${encodeURIComponent(plan)}%0A` +
-                            `🌍 *Country/Time:* ${encodeURIComponent(countryTime)}%0A%0A` +
-                            `Please let me know the available schedule and confirm my trial.`;
-
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-
-            // Show Confirmation Popup
-            document.getElementById('modalSummary').innerHTML = `
-                <strong>Student:</strong> ${name} (${age} yrs)<br>
-                <strong>Course:</strong> ${course}<br>
-                <strong>Plan:</strong> ${plan}<br>
-                <strong>Time:</strong> ${countryTime}
-            `;
-            document.getElementById('manualWaLink').href = whatsappURL;
-            document.getElementById('confirmationModal').style.display = 'flex';
-
-            // Auto open WhatsApp after 1.5 seconds
-            setTimeout(() => {
-                window.open(whatsappURL, '_blank');
-            }, 1500);
-        }
-    </script>
-
+<script>
+var NUM="61432772444";
+// Paste your own payment links here (Stripe Payment Link, PayPal.me). Empty links fall back to WhatsApp.
+var LINKS={card:"",paypal:""};
+function wa(msg){window.open("https://wa.me/"+NUM+"?text="+encodeURIComponent(msg),"_blank")}
+function pay(m){
+var plan=document.getElementById("pp").value;
+if(LINKS[m]){window.open(LINKS[m],"_blank");return}
+var label={card:"card or Apple Pay",paypal:"PayPal",bank:"bank transfer or PayID"}[m];
+wa("Assalamu Alaikum! I would like to pay for the "+plan+" plan by "+label+". Please send me the payment details.");
+}
+document.getElementById("f").addEventListener("submit",function(e){
+e.preventDefault();
+var v=function(i){return document.getElementById(i).value};
+wa("Assalamu Alaikum! New free trial booking:\nName: "+v("n")+"\nAge: "+v("a")+"\nTutor: "+v("g")+"\nCourse: "+v("c")+"\nPlan: "+v("p")+"\nState and time: "+(v("t")||"Not specified")+"\n\nPlease share the available schedule.");
+});
+</script>
 </body>
 </html>
