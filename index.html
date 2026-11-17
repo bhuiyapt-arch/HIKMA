@@ -87,7 +87,7 @@
             background-color: var(--white);
         }
 
-        /* Hero Section (Updated with Teacher-Student Image) */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, rgba(6, 59, 39, 0.96), rgba(11, 94, 63, 0.92)), 
                         url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1600&q=80') center/cover;
@@ -579,6 +579,106 @@
             transform: translateY(-2px);
         }
 
+        /* Confirmation Modal Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 59, 39, 0.85);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: var(--white);
+            max-width: 450px;
+            width: 100%;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            border-top: 6px solid var(--gold);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: popIn 0.3s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(37, 211, 102, 0.15);
+            color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 15px;
+        }
+
+        .modal-box h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-box p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .modal-summary {
+            background: #f1f5f9;
+            padding: 12px 15px;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .modal-wa-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .modal-close-btn {
+            background: #e2e8f0;
+            color: var(--text-dark);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
         /* Floating WhatsApp */
         .float-wa {
             position: fixed;
@@ -645,7 +745,7 @@
         <a href="#register" class="nav-btn">Free Trial</a>
     </nav>
 
-    <!-- HERO SECTION WITH TEACHER & STUDENT IMAGE -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-text">
@@ -911,6 +1011,24 @@
         </div>
     </section>
 
+    <!-- INSTANT CONFIRMATION POPUP MODAL -->
+    <div class="modal-overlay" id="confirmationModal">
+        <div class="modal-box">
+            <div class="modal-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>JazakAllah Khair!</h3>
+            <p>Your Free Trial request is ready. Redirecting you to WhatsApp to confirm your schedule with our team...</p>
+            <div class="modal-summary" id="modalSummary"></div>
+            <div class="modal-actions">
+                <a href="#" id="manualWaLink" target="_blank" class="modal-wa-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Open WhatsApp
+                </a>
+                <button onclick="closeModal()" class="modal-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/61432772444?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20more%20about%20Quran%20classes." class="float-wa" target="_blank" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
@@ -921,7 +1039,7 @@
         <p style="margin-top: 5px; font-size: 0.85rem;">WhatsApp: +61 432 772 444 | Spreading the Light of the Holy Quran Worldwide</p>
     </footer>
 
-    <!-- WhatsApp Direct & Auto-Select Script -->
+    <!-- WhatsApp Direct, Auto-Select & Confirmation Popup Script -->
     <script>
         function selectCourse(courseName) {
             document.getElementById('course').value = courseName;
@@ -929,6 +1047,10 @@
 
         function selectPlan(planName) {
             document.getElementById('plan').value = planName;
+        }
+
+        function closeModal() {
+            document.getElementById('confirmationModal').style.display = 'none';
         }
 
         function sendToWhatsApp(event) {
@@ -953,7 +1075,21 @@
                             `Please let me know the available schedule and fees.`;
 
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-            window.open(whatsappURL, '_blank');
+
+            // Show Confirmation Popup
+            document.getElementById('modalSummary').innerHTML = `
+                <strong>Student:</strong> ${name} (${age} yrs)<br>
+                <strong>Course:</strong> ${course}<br>
+                <strong>Plan:</strong> ${plan}<br>
+                <strong>Time:</strong> ${countryTime}
+            `;
+            document.getElementById('manualWaLink').href = whatsappURL;
+            document.getElementById('confirmationModal').style.display = 'flex';
+
+            // Auto open WhatsApp after 1.5 seconds
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+            }, 1500);
         }
     </script>
 
