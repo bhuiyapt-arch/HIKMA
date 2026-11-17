@@ -425,7 +425,7 @@
         }
 
         .price-amount {
-            font-size: 2.1rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--secondary);
             margin: 15px 0;
@@ -871,47 +871,48 @@
         </div>
     </section>
 
+    <!-- PRICING PLANS IN AUSTRALIAN DOLLARS (AUD $) -->
     <section class="section">
         <div class="section-header">
             <span>Class Schedules</span>
-            <h2>Flexible Monthly Plans</h2>
+            <h2>Flexible Monthly Plans (AUD)</h2>
         </div>
         <div class="pricing-grid">
             <div class="price-card">
                 <h3>Weekend Plan</h3>
-                <div class="price-amount">2 Days <span>/ week</span></div>
+                <div class="price-amount">AUD $45 <span>/ month</span></div>
                 <ul class="price-details">
-                    <li>8 Live Classes per Month</li>
+                    <li>2 Days per Week (8 Classes)</li>
                     <li>30 Minutes 1-on-1 Session</li>
                     <li>Saturday & Sunday</li>
                     <li>Monthly Progress Report</li>
                 </ul>
-                <a href="#register" onclick="selectPlan('Weekend Plan (2 Days/Week)')" class="course-btn">Choose Plan</a>
+                <a href="#register" onclick="selectPlan('Weekend Plan (AUD $45/month)')" class="course-btn">Choose Plan</a>
             </div>
 
             <div class="price-card popular">
                 <div class="popular-badge">Recommended</div>
                 <h3>Standard Plan</h3>
-                <div class="price-amount">3 Days <span>/ week</span></div>
+                <div class="price-amount">AUD $65 <span>/ month</span></div>
                 <ul class="price-details">
-                    <li>12 Live Classes per Month</li>
+                    <li>3 Days per Week (12 Classes)</li>
                     <li>30 Minutes 1-on-1 Session</li>
                     <li>Flexible Days Selection</li>
                     <li>Dedicated Personal Tutor</li>
                 </ul>
-                <a href="#register" onclick="selectPlan('Standard Plan (3 Days/Week)')" class="course-btn">Choose Plan</a>
+                <a href="#register" onclick="selectPlan('Standard Plan (AUD $65/month)')" class="course-btn">Choose Plan</a>
             </div>
 
             <div class="price-card">
                 <h3>Intensive Plan</h3>
-                <div class="price-amount">5 Days <span>/ week</span></div>
+                <div class="price-amount">AUD $95 <span>/ month</span></div>
                 <ul class="price-details">
-                    <li>20 Live Classes per Month</li>
+                    <li>5 Days per Week (20 Classes)</li>
                     <li>30 Minutes 1-on-1 Session</li>
                     <li>Monday to Friday</li>
                     <li>Fast-Track Tajweed & Hifz</li>
                 </ul>
-                <a href="#register" onclick="selectPlan('Intensive Plan (5 Days/Week)')" class="course-btn">Choose Plan</a>
+                <a href="#register" onclick="selectPlan('Intensive Plan (AUD $95/month)')" class="course-btn">Choose Plan</a>
             </div>
         </div>
     </section>
@@ -991,9 +992,9 @@
                         <div class="form-group">
                             <label>Weekly Plan *</label>
                             <select id="plan" required>
-                                <option value="Standard Plan (3 Days/Week)">Standard (3 Days/Week)</option>
-                                <option value="Weekend Plan (2 Days/Week)">Weekend (2 Days/Week)</option>
-                                <option value="Intensive Plan (5 Days/Week)">Intensive (5 Days/Week)</option>
+                                <option value="Standard Plan (AUD $65/month)">Standard (3 Days - AUD $65/mo)</option>
+                                <option value="Weekend Plan (AUD $45/month)">Weekend (2 Days - AUD $45/mo)</option>
+                                <option value="Intensive Plan (AUD $95/month)">Intensive (5 Days - AUD $95/mo)</option>
                             </select>
                         </div>
                     </div>
@@ -1072,7 +1073,7 @@
                             `📖 *Course:* ${encodeURIComponent(course)}%0A` +
                             `📅 *Plan:* ${encodeURIComponent(plan)}%0A` +
                             `🌍 *Country/Time:* ${encodeURIComponent(countryTime)}%0A%0A` +
-                            `Please let me know the available schedule and fees.`;
+                            `Please let me know the available schedule and confirm my trial.`;
 
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
 
